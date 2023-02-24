@@ -28,6 +28,7 @@
 **S** → (a**SBC**) → (aa**SBCBC**) → (aaab**CBCBC**) → (aaab**BCCBC**) → (aaabb**CCBC**) → (aaabb**CBCC**) → (aaabb**BCCC**) → (aaabbb**CCC**) → (aaabbbc**CC**) → (aaabbbcc**C**) → (aaabbbccc)
 
 #
+## Задание 2
 Построить грамматику, порождающую язык:\
 ![task 2](./misc/number2.png)
 #
