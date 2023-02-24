@@ -28,3 +28,27 @@
 **S** → (a**SBC**) → (aa**SBCBC**) → (aaab**CBCBC**) → (aaab**BCCBC**) → (aaabb**CCBC**) → (aaabb**CBCC**) → (aaabb**BCCC**) → (aaabbb**CCC**) → (aaabbbc**CC**) → (aaabbbcc**C**) → (aaabbbccc)
 
 #
+Построить грамматику, порождающую язык:\
+![task 2](./misc/2.png)
+#
+a.\
+G ({a, b, c}, {S, A, B, C}, P, S)\
+P:\
+    S : 'a' A;\
+    A -> 'a' A | B;\
+    B -> 'b' B | C;\
+    C -> 'c' | 'c' C;
+
+b.\
+G ({0, 10}, {S, A, B}, P, S)\
+P:\
+    S : '0' | '0' A | B | ε;\
+    A : '0' A | B | ε;\
+    B : '10' | '10' B;
+
+c.\
+G ({0, 1}, {S, A}, P, S)\
+P:\
+    S : '0' A '0' | '1' A '1';\
+    A : '0' A '0' | '1' A '1' | ε;\
+#
