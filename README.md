@@ -148,3 +148,72 @@ A : '[a-zA-Z]' A | '[0-9]' A | eps;
 ![task 7.1](./misc/number7_a.png)
 
 #
+
+#
+S : '+' D | '-' D | D;\
+D : [0-9] D | [0-9] | '.' D2 | [0-9] F ;\
+D2 : [0-9] D2 | [0-9] | [0-9] F | 'e' E | 'E' E;\
+E : '-' D3 | D3;\
+D3 : [0-9] D3 | [0-9] | F;\
+F : 'f' | 'F' | 'l' | 'L';
+
+```
+digraph G {
+    S -> D [label="[+-]"];
+    S -> D;
+
+    D -> D [label="[0-9]"];
+    edge [color=red];
+    D -> ◉ [label="[0-9]"];
+    edge [color=black];
+    D -> F [label="[0-9]"];
+    D -> D2 [label=" ."];
+
+    D2 -> D2 [label="[0-9]"];
+    edge [color=red];
+    D2 -> ◉ [label="[0-9]"];
+    edge [color=black];
+    D2 -> F [label="[0-9]"];
+    D2 -> E [label="[Ee]"];
+
+    E -> D3 [label=" -"];
+    E -> D3;
+
+    D3 -> D3 [label="[0-9]"];
+    edge [color=red];
+    D3 -> ◉ [label="[0-9]"];
+    edge [color=black];
+    D3 -> F [label="[0-9]"];
+
+    edge [color=red];
+    F -> ◉ [label="[fFlL]"];
+  }
+```
+<!-- <img src='https://g.gravizo.com/svg?
+digraph G {
+    S -> D [label="[+-]"];
+    S -> D;
+    D -> D [label="[0-9]"];
+    edge [color=red];
+    D -> ◉ [label="[0-9]"];
+    edge [color=black];
+    D -> F [label="[0-9]"];
+    D -> D2 [label=" ."];
+    D2 -> D2 [label="[0-9]"];
+    edge [color=red];
+    D2 -> ◉ [label="[0-9]"];
+    edge [color=black];
+    D2 -> F [label="[0-9]"];
+    D2 -> E [label="[Ee]"];
+    E -> D3 [label=" -"];
+    E -> D3;
+    D3 -> D3 [label="[0-9]"];
+    edge [color=red];
+    D3 -> ◉ [label="[0-9]"];
+    edge [color=black];
+    D3 -> F [label="[0-9]"];
+    edge [color=red];
+    F -> ◉ [label="[fFlL]"];
+  }
+'> -->
+![task 7.2](./misc/number7_b.png)
