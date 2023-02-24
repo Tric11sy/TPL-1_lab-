@@ -118,3 +118,33 @@ b. Для множества вещественных констант с пла
 [Решение](https://regexr.com/790m3)
 #
 
+#
+## Задание 7
+Для регулярных выражений из предыдущего задания постройте конечные автоматы. Изобразите их в виде графа. Для встраивания изображения в ответ воспользуйтесь сервисом http://gravizo.com/
+#
+S : '_' A | '[a-zA-Z]' A;\
+A : '[a-zA-Z]' A | '[0-9]' A | eps;
+
+```
+  digraph G {
+    S -> A [label="[a-zA-Z_]"];
+
+    edge [color=black];
+    A -> A [label="[a-zA-Z0-9]"];
+
+    edge [color=red];
+    A -> ◉;
+  }
+```
+<!-- <img src='https://g.gravizo.com/svg?
+  digraph G {
+    S -> A [label="[a-zA-Z_]"];
+    edge [color=black];
+    A -> A [label="[a-zA-Z0-9]"];
+    edge [color=red];
+    A -> ◉;
+  }
+'> -->
+![task 7.1]()
+
+#
