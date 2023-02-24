@@ -145,6 +145,6 @@ A : '[a-zA-Z]' A | '[0-9]' A | eps;
     A -> ◉;
   }
 '> -->
-![task 7.1]()
+![task 7.1](./misc/number7_a.png)
 
 #
