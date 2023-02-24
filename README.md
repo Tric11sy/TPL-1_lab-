@@ -122,27 +122,27 @@ b. Для множества вещественных констант с пла
 ## Задание 7
 Для регулярных выражений из предыдущего задания постройте конечные автоматы. Изобразите их в виде графа. Для встраивания изображения в ответ воспользуйтесь сервисом http://gravizo.com/
 #
-S : '_' A | '[a-zA-Z]' A;\
-A : '[a-zA-Z]' A | '[0-9]' A | eps;
+S : '_' Q | '[a-zA-Z]' Q;\
+Q : '[a-zA-Z]' Q | '[0-9]' Q | eps;
 
 ```
   digraph G {
-    S -> A [label="[a-zA-Z_]"];
+    S -> Q [label="[a-zA-Z_]"];
 
     edge [color=black];
-    A -> A [label="[a-zA-Z0-9]"];
+    Q -> Q [label="[a-zA-Z0-9]"];
 
     edge [color=red];
-    A -> ◉;
+    Q -> ◉;
   }
 ```
 <!-- <img src='https://g.gravizo.com/svg?
   digraph G {
-    S -> A [label="[a-zA-Z_]"];
+    S -> Q [label="[a-zA-Z_]"];
     edge [color=black];
-    A -> A [label="[a-zA-Z0-9]"];
+    Q -> Q [label="[a-zA-Z0-9]"];
     edge [color=red];
-    A -> ◉;
+    Q -> ◉;
   }
 '> -->
 ![task 7.1](./misc/number7_a.png)
